@@ -1,0 +1,50 @@
+name: "✍️ Translation Request"
+description: Request translation improvements or additions
+labels: ["i18n"]
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Language"
+      description: "Select the language to improve"
+      options:
+        - "German (de)"
+        - "Spanish (es)"
+        - "French (fr)"
+        - "Other (please specify)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: "Proposed Changes"
+      description: "Use table format: | Key | Current | Proposed | Notes |"
+      placeholder: |
+        | `logout` | "Abmelden" | "Ausloggen" | More colloquial |
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: type
+    attributes:
+      label: "Type of Improvement"
+      options:
+        - label: "Typo/cosmetic fix"
+        - label: "Clarity/readability"
+        - label: "Missing translation"
+        - label: "New language support"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      placeholder: "Screenshots, glossary references, or special considerations..."
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: "Verification"
+      options:
+        - label: "Checked for variable placeholders (e.g., %{count})"
+        - label: "Confirmed with native speakers"
